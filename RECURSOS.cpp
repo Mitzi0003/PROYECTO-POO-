@@ -427,13 +427,14 @@ void dejarGanarDiamante(juegoD tab){
     void opcionesJugar(){
         cout<< "\n";
         cout << "Para jugar, debes ingresar primero la pieza que quieres mover, y luego el lugar donde quieres moverla\n";
+        cout << "Opciones Extras: \n";
         cout << "Para llegar de forma inmediata al ultimo movimiento, debes ingresar '9' en todos los campos.\n";
         cout << "Para reiniciar el tablero, debes ingresar '8' en todos los campos\n";
         cout << "\n";
         cout << "ES HORA DE JUGAR \n\n";
     }
 
-    void jugarIngles(){
+     void jugarIngles(){
         int moverFila, moverColumna, destinoFila, destinoColumna, movimientoValido, salida = 0, ganado;
         juego tab;
         inicializarJuegoIngles(tab);
@@ -463,9 +464,6 @@ void dejarGanarDiamante(juegoD tab){
                 cout << "Haz decidido llegar al final del juego. Haz el ultimo movimiento!\n";
                 mostrarTableroIngles(tab);
             }else{
-                if(moverFila == 0 && moverColumna == 0 && destinoFila == 0 && destinoColumna == 0){
-                    salida = 1;
-                }else{
                     if (moverFila == 8 && moverColumna == 8 && destinoFila == 8 && destinoColumna == 8)
                     {
                         inicializarJuegoIngles(tab);
@@ -483,7 +481,6 @@ void dejarGanarDiamante(juegoD tab){
                             cout << "Movimiento no valido\n";
                         }
                     }
-                }
             }
 
             ganado = hazGanado(tab);
@@ -530,9 +527,6 @@ void dejarGanarDiamante(juegoD tab){
             cout << "Haz decidido llegar al final del juego. Haz el ultimo movimiento!\n";
             mostrarTableroFrances(tab);
         }else{
-            if(moverFila == 0 && moverColumna == 0 && destinoFila == 0 && destinoColumna == 0){
-                salida = 1;
-            }else{
                 if (moverFila == 8 && moverColumna == 8 && destinoFila == 8 && destinoColumna == 8)
                 {
                     inicializarJuegoFrances(tab);
@@ -550,7 +544,6 @@ void dejarGanarDiamante(juegoD tab){
                         cout << "Movimiento no valido\n";
                     }
                 }
-            }
         }
 
         ganado = hazGanado(tab);
@@ -596,10 +589,8 @@ void dejarGanarDiamante(juegoD tab){
             dejarGanarDiamante(tab);
             cout << "Haz decidido llegar al final del juego. Haz el ultimo movimiento!\n";
             mostrarTableroDiamante(tab);
-        }else{
-            if(moverFila == 0 && moverColumna == 0 && destinoFila == 0 && destinoColumna == 0){
-                salida = 1;
-            }else{
+        }
+        else{
                 if (moverFila == 8 && moverColumna == 8 && destinoFila == 8 && destinoColumna == 8)
                 {
                     inicializarJuegoDiamante(tab);
@@ -617,7 +608,6 @@ void dejarGanarDiamante(juegoD tab){
                         cout << "Movimiento no valido\n";
                     }
                 }
-            }
         }
 
         ganado = hazGanado2(tab);
@@ -634,7 +624,3 @@ void dejarGanarDiamante(juegoD tab){
     }
 
 }
-
-
-
-
