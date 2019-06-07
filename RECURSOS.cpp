@@ -185,22 +185,18 @@ void mostrarTableroDiamante(juegoD tab){
 int validarMovimiento(int moverFila, int moverColumna, int destinoFila, int destinoColumna, juego tab){
         if (tab[moverFila-1][moverColumna-1] == 'O')
         {
-            //que sea un movimiento dentro del tablero
             if ((moverFila < 1 || moverFila > 7) && (destinoFila < 1 ||  destinoColumna > 7))
             {
                 return 0;
             }else{
-                // que no se mueva al mismo lugar donde esta
                 if (moverFila == destinoFila && moverColumna == destinoColumna)
                 {
                     return 0;
                 }else{
-                    // que no se mueva en diagonal
                     if (moverFila == destinoFila || moverColumna == destinoColumna)
-                    {	// que se mueva solo 2 espacios
+                    {
                         if ((moverFila - destinoFila == 2 || moverFila - destinoFila == -2) || (moverColumna - destinoColumna == 2 || moverColumna - destinoColumna == -2))
                         {
-                            //que no exista ficha en el lugar de destino, ni que sea una esquina prohibida
                             if (tab[destinoFila - 1][destinoColumna - 1] == 'O' || tab[destinoFila - 1][destinoColumna - 1] == '"')
                             {
                                 return 0;
@@ -223,22 +219,17 @@ int validarMovimiento(int moverFila, int moverColumna, int destinoFila, int dest
 int validarMovimientoD(int moverFila, int moverColumna, int destinoFila, int destinoColumna, juegoD tab){
     if (tab[moverFila-1][moverColumna-1] == 'O')
     {
-        //que sea un movimiento dentro del tablero
         if ((moverFila < 1 || moverFila > 9) && (destinoFila < 1 ||  destinoColumna > 9))
         {
             return 0;
         }else{
-            // que no se mueva al mismo lugar donde esta
             if (moverFila == destinoFila && moverColumna == destinoColumna)
             {
                 return 0;
             }else{
-                // que no se mueva en diagonal
                 if (moverFila == destinoFila || moverColumna == destinoColumna)
-                {	// que se mueva solo 2 espacios
                     if ((moverFila - destinoFila == 2 || moverFila - destinoFila == -2) || (moverColumna - destinoColumna == 2 || moverColumna - destinoColumna == -2))
                     {
-                        //que no exista ficha en el lugar de destino, ni que sea una esquina prohibida
                         if (tab[destinoFila - 1][destinoColumna - 1] == 'O' || tab[destinoFila - 1][destinoColumna - 1] == '"')
                         {
                             return 0;
