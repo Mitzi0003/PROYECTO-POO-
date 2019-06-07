@@ -25,6 +25,11 @@ int main(){
     cout << "Seleccionar la opcion: ";
     cin >> seleccion;
 
+    while(seleccion>3 || seleccion<0){
+    cout<<"Vuelve a ingresar la seleccion: ";
+    cin>>seleccion;
+    cout<< endl;
+}
 
     if(seleccion==1){
         mostrarOpciones();
